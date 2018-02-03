@@ -281,7 +281,7 @@ function OpenPropertyMenu(property)
     'default', GetCurrentResourceName(), 'property',
     {
       title    = property.label,
-      align    = 'top-left',
+      align    = 'bottom-right',
       elements = elements,
     },
     function(data2, menu)
@@ -331,7 +331,7 @@ function OpenGatewayMenu(property)
       'default', GetCurrentResourceName(), 'gateway',
       {
         title    = property.name,
-        align    = 'top-left',
+        align    = 'bottom-right',
         elements = {
           {label = _U('owned_properties'),    value = 'owned_properties'},
           {label = _U('available_properties'), value = 'available_properties'},
@@ -383,7 +383,7 @@ function OpenGatewayOwnedPropertiesMenu(property)
     'default', GetCurrentResourceName(), 'gateway_owned_properties',
     {
       title    = property.name .. ' - ' .. _U('owned_properties'),
-      align    = 'top-left',
+      align    = 'bottom-right',
       elements = elements,
     },
     function(data, menu)
@@ -402,7 +402,7 @@ function OpenGatewayOwnedPropertiesMenu(property)
         'default', GetCurrentResourceName(), 'gateway_owned_properties_actions',
         {
           title    = data.current.label,
-          align    = 'top-left',
+          align    = 'bottom-right',
           elements = elements,
         },
         function(data2, menu)
@@ -452,7 +452,7 @@ function OpenGatewayAvailablePropertiesMenu(property)
     'default', GetCurrentResourceName(), 'gateway_available_properties',
     {
       title    = property.name.. ' - ' .. _U('available_properties'),
-      align    = 'top-left',
+      align    = 'bottom-right',
       elements = elements,
     },
     function(data, menu)
@@ -463,7 +463,7 @@ function OpenGatewayAvailablePropertiesMenu(property)
         'default', GetCurrentResourceName(), 'gateway_available_properties_actions',
         {
           title    = property.name,
-          align    = 'top-left',
+          align    = 'bottom-right',
           elements = {
             {label = _U('buy'), value = 'buy'},
             {label = _U('rent'),   value = 'rent'},
@@ -526,7 +526,7 @@ function OpenRoomMenu(property, owner)
     'default', GetCurrentResourceName(), 'room',
     {
       title    = property.label,
-      align    = 'top-left',
+      align    = 'bottom-right',
       elements = elements,
     },
     function(data, menu)
@@ -546,7 +546,7 @@ function OpenRoomMenu(property, owner)
           'default', GetCurrentResourceName(), 'room_invite',
           {
             title    = property.label .. ' - ' .. _U('invite'),
-            align    = 'top-left',
+            align    = 'bottom-right',
             elements = elements,
           },
           function(data, menu)
@@ -574,7 +574,7 @@ function OpenRoomMenu(property, owner)
             'default', GetCurrentResourceName(), 'player_dressing',
             {
               title    = property.label .. ' - ' .. _U('player_clothes'),
-              align    = 'top-left',
+              align    = 'bottom-right',
               elements = elements,
             },
             function(data, menu)
@@ -616,7 +616,7 @@ function OpenRoomMenu(property, owner)
               'default', GetCurrentResourceName(), 'remove_cloth',
               {
                 title    = property.label .. ' - ' .. _U('remove_cloth'),
-                align    = 'top-left',
+                align    = 'bottom-right',
                 elements = elements,
               },
               function(data, menu)
@@ -679,7 +679,7 @@ function OpenRoomInventoryMenu(property, owner)
       'default', GetCurrentResourceName(), 'room_inventory',
       {
         title    = property.label .. ' - ' .. _U('inventory'),
-        align    = 'top-left',
+        align    = 'bottom-right',
         elements = elements,
       },
       function(data, menu)
@@ -773,7 +773,7 @@ function OpenPlayerInventoryMenu(property, owner)
       'default', GetCurrentResourceName(), 'player_inventory',
       {
         title    = property.label .. ' - ' .. _U('inventory'),
-        align    = 'top-left',
+        align    = 'bottom-right',
         elements = elements,
       },
       function(data, menu)
