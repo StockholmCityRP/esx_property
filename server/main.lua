@@ -263,10 +263,12 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 
 	if type == 'item_standard' then
 		local sourceItem = xPlayer.getInventoryItem(item)
+		
 		TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
-
+			local inventoryItem = inventory.getItem(item)
+			
 			-- is there enough in the property?
-			if count > 0 and inventory.getItem(item).count >= count then
+			if count > 0 and inventoryItem.count >= count then
 			
 				-- can the player carry the said amount of x item?
 				if sourceItem.limit ~= -1 and (sourceItem.count + count) > sourceItem.limit then
@@ -274,6 +276,7 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 				else
 					inventory.removeItem(item, count)
 					xPlayer.addInventoryItem(item, count)
+					TriggerClientEvent('esx:showNotification', _source, _U('have_withdrawn', count, inventoryItem.label))
 				end
 			else
 				TriggerClientEvent('esx:showNotification', _source, _U('not_enough_in_property'))
@@ -345,13 +348,13 @@ AddEventHandler('esx_property:putItem', function(owner, type, item, count)
     local playerItemCount = xPlayer.getInventoryItem(item).count
 
     if playerItemCount >= count then
-
-      xPlayer.removeInventoryItem(item, count)
-
+	
       TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
+	    xPlayer.removeInventoryItem(item, count)
         inventory.addItem(item, count)
+		TriggerClientEvent('esx:showNotification', _source, _U('have_deposited', count, inventory.getItem(item).label))
       end)
-
+      
     else
       TriggerClientEvent('esx:showNotification', _source, _U('invalid_quantity'))
     end

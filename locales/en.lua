@@ -1,9 +1,10 @@
 Locales['en'] = {
-
+  ['have_withdrawn'] = 'you have withdrawn ~y~x%s~w~ ~b~%s~w~',
+  ['have_deposited'] = 'you have deposited ~y~x%s~w~ ~b~%s~w~',
   ['free_prop'] = 'free property',
   ['property'] = 'property',
   ['enter'] = 'enter',
-  ['leave'] = 'leave',
+  ['leave'] = 'leave the property',
   ['buy'] = 'buy',
   ['rent'] = 'rent',
   ['visit'] = 'visit',
@@ -11,7 +12,7 @@ Locales['en'] = {
   ['owned_properties'] = 'acquired properties',
   ['available_properties'] = 'available properties',
   ['invite_player'] = 'invite a player',
-  ['you_invited'] = 'you invited %s',
+  ['you_invited'] = 'you invited ~y~%s~w~ to your property',
   ['player_clothes'] = 'clothes',
   ['remove_cloth'] = 'remove clothing',
   ['removed_cloth'] = 'this outfit has been removed from your wardrobe!',
@@ -31,5 +32,4 @@ Locales['en'] = {
   ['paid_rent'] = 'you ~g~paid~s~ your rent: ~g~$',
   ['not_enough_in_property'] = 'there\'s not enough of ~r~that item~w~ in the property!',
   ['player_cannot_hold'] = 'you do ~r~not~w~ have enough ~y~free space~w~ in your inventory!',
-
 }
